@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="allMargin">16dp</dimen>
+    <dimen name="marginSmall">4dp</dimen>
+    <dimen name="marginBig">20dp</dimen>
+    <dimen name="icon">52dp</dimen>
+    <dimen name="textSizeStandart">24dp</dimen>
+    <dimen name="textSizeSmall">16dp</dimen>
+    <dimen name="textSizeBig">32dp</dimen>
+</resources>

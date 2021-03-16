@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Yschool</string>
+    <string name="stocks">Stocks</string>
+    <string name="favorite">Favorite</string>
+    <string name="popular_request">Popular request</string>
+    <string name="you_have_searched">You\'ve searched for this</string>
+    <string name="chart">Chart</string>
+    <string name="summary">Summary</string>
+    <string name="news">News</string>
+    <string name="forecasts">Forecasts</string>
+    <string name="search">Find company or ticker</string>
+    <string name="yndx">YNDX</string>
+    <string name="yndxllc">Yandex, LLC</string>
+    <string name="price">4 764,6 P</string>
+    <string name="price_change">+55 P (1,5%)</string>
+</resources>
