@@ -1,7 +1,7 @@
 package ru.netology.ynew.activity.dto
 
 data class Stock(
-    val id: Long,
+    val id: Int,
     val name: String,
     val firm: String,
     val image: String,

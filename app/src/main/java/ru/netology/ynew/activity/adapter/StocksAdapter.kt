@@ -12,7 +12,7 @@ import ru.netology.ynew.databinding.CardStockBinding
 typealias OnLikeListener = (stock: Stock) -> Unit
 
 class StocksAdapter(
-    private val onLikeListener: OnLikeListener
+        private val onLikeListener: OnLikeListener
 ) : ListAdapter<Stock, StockViewHolder>(StockDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StockViewHolder {
         val binding = CardStockBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,14 +26,20 @@ class StocksAdapter(
 }
 
 class StockViewHolder(
-    private val binding: CardStockBinding,
-    private val onLikeListener: OnLikeListener
+        private val binding: CardStockBinding,
+        private val onLikeListener: OnLikeListener
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(stock: Stock) {
         binding.apply {
             favorite.setImageResource(
-                if (stock.favorite) R.drawable.star_full else R.drawable.star_empty
+                    if (stock.favorite) R.drawable.star_full else R.drawable.star_empty
             )
+            favorite.setOnClickListener{
+                onLikeListener(stock)
+            }
+//            binding.buttonFavorites.setOnClickListener {
+//                viewModel.like()
+//            }
         }
     }
 }

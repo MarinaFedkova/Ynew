@@ -14,19 +14,15 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //setSupportActionBar(findViewById(R.id.topAppBar))
-
         val viewModel: StocksViewModel by viewModels()
         val adapter = StocksAdapter {
-            viewModel.like()
+            viewModel.likeById(it.id)
         }
         binding.list.adapter = adapter
         viewModel.data.observe(this, { stocks ->
             adapter.submitList(stocks)
         })
-        binding.buttonFavorites.setOnClickListener {
-            viewModel.like()
-        }
+
     }
 }
 

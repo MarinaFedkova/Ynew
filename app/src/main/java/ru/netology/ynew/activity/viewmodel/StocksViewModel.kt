@@ -7,5 +7,6 @@ import ru.netology.ynew.activity.repository.StocksRepository
 class StocksViewModel : ViewModel() {
     private val repository: StocksRepository = StockRepositoryInMemoryImpl()
     val data = repository.getAll()
-    fun like() = repository.like()
+    fun likeById(id: Int) = repository.likeById(id)
+    fun seeFavorite() = repository.seeFavorite()
 }
