@@ -20,36 +20,27 @@
             app:layout_constraintTop_toTopOf="parent"
             app:titleTextColor="@color/black" />
 
-    <Button
-        android:id="@+id/button_stocks"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_margin="@dimen/marginBig"
-        android:text="@string/stocks"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="@color/black"
-        android:textSize="@dimen/textSizeBig"
-        app:backgroundTint="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/barrier"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
-       />
+<ImageButton
+    android:id="@+id/buttonStocks"
+    android:layout_width="150dp"
+    android:layout_height="100dp"
+    android:src="@drawable/ic_stocks"
+    android:layout_margin="@dimen/marginSmall"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="@id/barrier"
+    app:layout_constraintTop_toBottomOf="@+id/search_view"
+    android:visibility="visible"/>
 
-    <Button
-        android:id="@+id/button_favorites"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:text="@string/favorite"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textColor="#757272"
-        android:textSize="@dimen/textSizeSmall"
-        app:backgroundTint="#FFFFFF"
-        app:iconTint="#FFFFFF"
-        app:layout_constraintStart_toEndOf="@id/button_stocks"
-        app:layout_constraintTop_toBottomOf="@+id/search_view"
+    <ImageButton
+        android:id="@+id/buttonFavorites"
+        android:layout_width="150dp"
+        android:layout_height="110dp"
+        android:layout_margin="@dimen/marginSmall"
+        android:src="@drawable/ic_favorites_light"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@id/barrier"
+        app:layout_constraintStart_toEndOf="@id/buttonStocks"
+        app:layout_constraintTop_toBottomOf="@+id/search_view"
         />
 
     <androidx.constraintlayout.widget.Barrier
@@ -57,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
-        app:constraint_referenced_ids="button_favorites,button_stocks" />
+        app:constraint_referenced_ids="buttonFavorites,buttonStocks" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"

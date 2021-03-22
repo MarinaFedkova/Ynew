@@ -3,7 +3,11 @@ package ru.netology.ynew.activity.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import android.view.View
+import kotlinx.android.synthetic.main.activity_main.view.*
 import ru.netology.ynew.R
+
+import ru.netology.ynew.activity.adapter.OnInterfactionListener
 import ru.netology.ynew.activity.adapter.StocksAdapter
 import ru.netology.ynew.activity.viewmodel.StocksViewModel
 import ru.netology.ynew.databinding.ActivityMainBinding
@@ -15,14 +19,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val viewModel: StocksViewModel by viewModels()
-        val adapter = StocksAdapter {
-            viewModel.likeById(it.id)
-        }
+        val adapter = StocksAdapter(object : OnInterfactionListener {
+            override fun likeById(id: Int) {
+                viewModel.likeById(id)
+            }
+        })
+
         binding.list.adapter = adapter
         viewModel.data.observe(this, { stocks ->
             adapter.submitList(stocks)
         })
 
+        binding.buttonStocks.setOnClickListener {
+            with(binding.buttonStocks) {
+                viewModel.seeAll()
+//                buttonFavorites.setImageResource(R.drawable.ic_favorites_light)
+//                buttonStocks.setImageResource(R.drawable.ic_stocks)
+            }
+        }
+        binding.buttonFavorites.setOnClickListener {
+            with(binding.buttonFavorites) {
+                viewModel.seeFavorite()
+//                buttonFavorites.setImageResource(R.drawable.ic_favorites)
+//                buttonStocks.setImageResource(R.drawable.ic_stocks_light)
+            }
+        }
     }
 }
 
@@ -32,30 +53,3 @@ class MainActivity : AppCompatActivity() {
 // Вы будете использовать это для поиска в своей базе данных и возврата результата.
 //        val searchView: SearchView = findViewById(R.id.search_view)
 //        val query: CharSequence = searchView.getQuery()
-
-//        button_stocks.setOnClickListener {
-//            seeAllStocks()
-//
-//        }
-//
-//        button_favorites.setOnClickListener {
-//            seeFavorites()
-//        }
-
-//        fun seeFavorites() {
-//            var favoriteList = stocks.filter { it.isFavorite == true }
-//
-//            button_favorites.setTextSize(28)
-//            button_favorites.setTextColor("black")
-//            button_stocks.setTextSize(24)
-//            button_stocks.setTextColor("lightblack") //
-//        }
-
-//кнопка меняет шрифт, отображается весь список акций.
-// кнопка Favorites меняет шрифт? или лучше менять картинку?
-//        fun seeAllStocks() {
-//
-//        }
-
-
-

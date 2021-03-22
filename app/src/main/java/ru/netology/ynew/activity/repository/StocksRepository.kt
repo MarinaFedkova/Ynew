@@ -6,5 +6,7 @@ import ru.netology.ynew.activity.dto.Stock
 interface StocksRepository {
     fun getAll(): LiveData<List<Stock>>
     fun likeById(id: Int)
+    fun seeAll()
     fun seeFavorite()
+
 }

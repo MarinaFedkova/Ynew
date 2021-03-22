@@ -60,7 +60,7 @@ class StockRepositoryInMemoryImpl : StocksRepository {
                     price = "4764.6P",
                     priceChange = "+55P (1,15%)",
                     favorite = false
-            ),
+            )
     )
 
     private val data = MutableLiveData(stocks)
@@ -76,6 +76,11 @@ class StockRepositoryInMemoryImpl : StocksRepository {
 
     override fun seeFavorite() {
         stocks = stocks.filter { it.favorite }
+        data.value = stocks
+    }
+
+    override fun seeAll() {
+        getAll()
         data.value = stocks
     }
 
