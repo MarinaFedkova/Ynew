@@ -35,6 +35,7 @@ class StockViewHolder(
     fun bind(stock: Stock) {
         binding.apply {
             name.text = stock.name
+            firm.text = stock.firm
             price.text = stock.price
             priceChange.text = stock.priceChange
             favorite.setImageResource(

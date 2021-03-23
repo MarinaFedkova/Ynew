@@ -32,16 +32,20 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonStocks.setOnClickListener {
             with(binding.buttonStocks) {
-                viewModel.seeAll()
-//                buttonFavorites.setImageResource(R.drawable.ic_favorites_light)
-//                buttonStocks.setImageResource(R.drawable.ic_stocks)
+                viewModel.data
+                buttonStocks.setImageResource(R.drawable.ic_stocks)
+            }
+            with(binding.buttonFavorites) {
+                buttonFavorites.setImageResource(R.drawable.ic_favorites_light)
             }
         }
         binding.buttonFavorites.setOnClickListener {
             with(binding.buttonFavorites) {
                 viewModel.seeFavorite()
-//                buttonFavorites.setImageResource(R.drawable.ic_favorites)
-//                buttonStocks.setImageResource(R.drawable.ic_stocks_light)
+                buttonFavorites.setImageResource(R.drawable.ic_favorites)
+            }
+            with(binding.buttonStocks) {
+               buttonStocks.setImageResource(R.drawable.ic_stocks_light)
             }
         }
     }

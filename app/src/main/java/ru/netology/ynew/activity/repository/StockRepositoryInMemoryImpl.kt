@@ -18,8 +18,8 @@ class StockRepositoryInMemoryImpl : StocksRepository {
             ),
             Stock(
                     id = 2,
-                    name = "YNDX",
-                    firm = "Yandex, LLC",
+                    name = "SBER",
+                    firm = "SBER",
                     image = "image",
                     price = "6000P",
                     priceChange = "+55P (1,15%)",
@@ -27,8 +27,8 @@ class StockRepositoryInMemoryImpl : StocksRepository {
             ),
             Stock(
                     id = 3,
-                    name = "YNDX",
-                    firm = "Yandex, LLC",
+                    name = "MAIL",
+                    firm = "MAIL, LLC",
                     image = "image",
                     price = "7000P",
                     priceChange = "+55P (1,15%)",
@@ -79,10 +79,10 @@ class StockRepositoryInMemoryImpl : StocksRepository {
         data.value = stocks
     }
 
-    override fun seeAll() {
-        getAll()
-        data.value = stocks
-    }
+//    override fun seeAll() {
+//        getAll()
+//        data.value = stocks
+//    }
 
 }
 
