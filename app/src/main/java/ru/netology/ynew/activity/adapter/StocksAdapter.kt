@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.netology.ynew.R
 import ru.netology.ynew.activity.dto.Stock
 import ru.netology.ynew.databinding.CardStockBinding
+import java.util.ArrayList
 
 interface OnInterfactionListener {
     fun likeById(id: Int) {}
@@ -26,6 +27,7 @@ class StocksAdapter(
         val stock = getItem(position)
         holder.bind(stock)
     }
+
 }
 
 class StockViewHolder(
@@ -57,4 +59,4 @@ class StockDiffCallback : DiffUtil.ItemCallback<Stock>() {
     override fun areContentsTheSame(oldItem: Stock, newItem: Stock): Boolean {
         return oldItem == newItem
     }
-}
+    }

@@ -3,6 +3,7 @@ package ru.netology.ynew.activity.repository
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import ru.netology.ynew.activity.adapter.StocksAdapter
 import ru.netology.ynew.activity.dto.Stock
 
 class StockRepositoryInMemoryImpl : StocksRepository {
@@ -79,10 +80,10 @@ class StockRepositoryInMemoryImpl : StocksRepository {
         data.value = stocks
     }
 
-//    override fun seeAll() {
-//        getAll()
-//        data.value = stocks
-//    }
+    override fun seeAll() {
+
+        data.value = stocks
+    }
 
 }
 

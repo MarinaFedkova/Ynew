@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonStocks.setOnClickListener {
             with(binding.buttonStocks) {
-                viewModel.data
+                viewModel.seeAll()
                 buttonStocks.setImageResource(R.drawable.ic_stocks)
             }
             with(binding.buttonFavorites) {
