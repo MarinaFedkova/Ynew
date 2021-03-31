@@ -9,6 +9,5 @@ class StocksViewModel : ViewModel() {
     val data = repository.getAll()
     fun likeById(id: Int) = repository.likeById(id)
     fun seeFavorite() = repository.seeFavorite()
-    fun seeAll() = repository.seeAll()
 
 }

@@ -1,12 +1,9 @@
 package ru.netology.ynew.activity.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import android.view.View
-import kotlinx.android.synthetic.main.activity_main.view.*
-import ru.netology.ynew.R
-
 import ru.netology.ynew.activity.adapter.OnInterfactionListener
 import ru.netology.ynew.activity.adapter.StocksAdapter
 import ru.netology.ynew.activity.viewmodel.StocksViewModel
@@ -30,27 +27,12 @@ class MainActivity : AppCompatActivity() {
             adapter.submitList(stocks)
         })
 
-        binding.buttonStocks.setOnClickListener {
-            with(binding.buttonStocks) {
-                viewModel.seeAll()
-                buttonStocks.setImageResource(R.drawable.ic_stocks)
-            }
-            with(binding.buttonFavorites) {
-                buttonFavorites.setImageResource(R.drawable.ic_favorites_light)
-            }
-        }
         binding.buttonFavorites.setOnClickListener {
-            with(binding.buttonFavorites) {
-                viewModel.seeFavorite()
-                buttonFavorites.setImageResource(R.drawable.ic_favorites)
-            }
-            with(binding.buttonStocks) {
-               buttonStocks.setImageResource(R.drawable.ic_stocks_light)
-            }
+            val intent = Intent(this, FavoriteActivity::class.java)
+            startActivity(intent)
         }
     }
 }
-
 
 
 //этот метод используется для получения текстового запроса, который пользователь ввел  в поле запроса.

@@ -1,8 +1,10 @@
 package ru.netology.ynew.activity.repository
 
 
+import android.content.Intent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import ru.netology.ynew.activity.activity.FavoriteActivity
 import ru.netology.ynew.activity.adapter.StocksAdapter
 import ru.netology.ynew.activity.dto.Stock
 
@@ -77,11 +79,6 @@ class StockRepositoryInMemoryImpl : StocksRepository {
 
     override fun seeFavorite() {
         stocks = stocks.filter { it.favorite }
-        data.value = stocks
-    }
-
-    override fun seeAll() {
-
         data.value = stocks
     }
 
