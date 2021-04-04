@@ -14,18 +14,7 @@ class FavoriteActivity : AppCompatActivity() {
         val binding = ActivityFavoriteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel: StocksViewModel by viewModels()
-        val adapter = StocksAdapter(object : OnInterfactionListener {
-            override fun likeById(id: Int) {
-                viewModel.likeById(id)
-            }
-        })
-
-
-        viewModel.data.observe(this, { stocks ->
-            adapter.submitList(stocks)
-        })
-
+        val stocks = intent.getParcelableArrayExtra("favoritesStocks")
 
         binding.buttonStocks.setOnClickListener {
             with(binding.buttonStocks) {

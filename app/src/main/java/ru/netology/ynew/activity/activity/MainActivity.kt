@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import kotlinx.android.synthetic.main.card_stock.view.*
 import ru.netology.ynew.activity.adapter.OnInterfactionListener
 import ru.netology.ynew.activity.adapter.StocksAdapter
+import ru.netology.ynew.activity.dto.Stock
 import ru.netology.ynew.activity.viewmodel.StocksViewModel
 import ru.netology.ynew.databinding.ActivityMainBinding
 
@@ -20,17 +22,26 @@ class MainActivity : AppCompatActivity() {
             override fun likeById(id: Int) {
                 viewModel.likeById(id)
             }
+
+
         })
 
         binding.list.adapter = adapter
         viewModel.data.observe(this, { stocks ->
             adapter.submitList(stocks)
         })
-
+        val favoriteLauncher = registerForActivityResult(FavoriteResultContract()) { result ->
+            result ?: return@registerForActivityResult
+            viewModel.seeFavorite()
+        }
         binding.buttonFavorites.setOnClickListener {
-            val intent = Intent(this, FavoriteActivity::class.java)
+//            favoriteLauncher.launch()
+//            val intent = Intent(this, FavoriteActivity::class.java)
+//            intent.putExtra("favoritesStocks", stocks)
+
             startActivity(intent)
         }
+
     }
 }
 
