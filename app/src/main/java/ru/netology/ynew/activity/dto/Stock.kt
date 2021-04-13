@@ -1,5 +1,9 @@
 package ru.netology.ynew.activity.dto
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class Stock(
     val id: Int,
     val name: String,
@@ -8,4 +12,4 @@ data class Stock(
     val price: String,
     val priceChange: String,
     val favorite: Boolean
-)
+): Parcelable

@@ -80,10 +80,10 @@ class StockRepositoryInMemoryImpl : StocksRepository {
         data.value = stocks
     }
 
-    override fun seeAll() {
-
-        data.value = stocks
-    }
+//    override fun seeAll() {
+//
+//        data.value = stocks
+//    }
 
 }
 
